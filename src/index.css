@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  background: #f9f9f9;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.sidebar {
+  width: 280px;
+  background: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.search {
+  padding: 12px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+  outline: none;
+  background: #fafafa;
+}
+
+.search-result {
+  text-align: center;
+  margin-top: 10px;
+  color: gray;
+}
+
+/* user list */
+
+.user-list {
+  list-style: none;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #eee;
+}
+
+
+.user:hover {
+  background-color: #f0f8ff;
+  transform: scale(1.02);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info small {
+  color: gray;
+  font-size: 13px;
+}
+
+.avatar {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #ddd;
+}
+
+/* end user list */
+
+.chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f7f9fc;
+  position: relative;
+}
+
+.user-not-found {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-header {
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.chat-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-header img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+.chat-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.chat-actions button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.chat-actions button:hover {
+  color: #00c897;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #f9fbfc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  background-color: rgb(19, 114, 202);
+  padding: 5px 10px;
+  border-radius: 8px;
+  align-self: flex-end;
+  max-width: 50%;
+}
+
+
+.message .time {
+  display: block;
+  font-size: 10px;
+  text-align: right;
+  margin-top: 3px;
+  color: #cfcfcf;
+}
+
+.chat-footer {
+  border-top: 1px solid #eee;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+.chat-footer form {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+}
+
+.chat-footer input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
+  outline: none;
+}
+
+.chat-footer input:focus {
+  border-color: #00c897;
+  box-shadow: 0 0 5px rgba(0, 200, 151, 0.4);
+}
+
+.chat-footer button {
+  background: linear-gradient(90deg, #00c897, #0078d7);
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 30%;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-footer button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 120, 215, 0.3);
+}
+
+/* Login page */
+.login-main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #00C897, #0078D7);
+  color: #333;
+}
+
+.login-main::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+  top: -150px;
+  left: -150px;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.login-main img {
+  width: 180px;
+  margin-bottom: 0px;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
+}
+
+.login-main h1 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.login-main form input:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.4);
+  transform: scale(1.02);
+}
+
+.login-main form button[type="button"] {
+  margin-right: 10px;
+}
+
+.login-main form {
+  background: white;
+  /* fondo claro del form */
+  border-radius: 12px;
+  padding: 30px;
+  width: 320px;
+  /* ancho fijo y centrado */
+  display: flex;
+  flex-direction: column;
+  /* 👈 apila los elementos */
+  align-items: stretch;
+  gap: 15px;
+  /* espacio entre elementos */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-main form button:hover {
+  background: linear-gradient(90deg, #00E5B0, #2196F3);
+  transform: scale(1.03);
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.5);
+}
+
+.login-main form label {
+  font-weight: 500;
+  font-size: 14px;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.login-main form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+}
+
+.login-main form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+.login-main form button {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #00C897, #0078D7);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-main form button:hover {
+  background: linear-gradient(90deg, #00E5B0, #2196F3);
+  transform: scale(1.03);
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.5);
+}
+
+p {
+  font-size: 13px;
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+form .text-info {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #e2e2e2;
+  text-align: center;
+}
