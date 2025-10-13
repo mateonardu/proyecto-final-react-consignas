@@ -227,7 +227,7 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #00C897, #0078D7);
-  color: #333;
+  color: #111111;
 }
 
 .login-main::before {
@@ -288,7 +288,7 @@
 .login-main form label {
   font-weight: 500;
   font-size: 14px;
-  color: #f0f0f0;
+  color: #000000;
   text-align: center;
 }
 
@@ -306,6 +306,7 @@
 
 .login-main form button {
   padding: 12px;
+  width: 100%;
   border: none;
   border-radius: 12px;
   background: linear-gradient(90deg, #00C897, #0078D7);
@@ -331,6 +332,6 @@ p {
 form .text-info {
   margin-top: 10px;
   font-size: 13px;
-  color: #e2e2e2;
+  color: #000000;
   text-align: center;
 }

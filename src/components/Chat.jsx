@@ -53,6 +53,10 @@ export default function Chat() {
     navigate("/")
   }
 
+
+  const handleClick = () => {
+    alert("pop-up de configuración")
+  }
   return (
     <div className="chat">
       <header className="chat-header">
@@ -71,7 +75,7 @@ export default function Chat() {
         <div className="chat-actions">
           <button title="Camera">📷</button>
           <button title="Gallery">🖼️</button>
-          <button title="Settings">⚙️</button>
+          <button title="Settings" onClick={handleClick}>⚙️</button>
           <button title="Help">❓</button>
           <button onClick={handleLogout}>Cerrar sesión</button>
         </div>
