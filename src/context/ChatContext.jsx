@@ -3,16 +3,13 @@ import { createContext, useContext, useState, useEffect } from "react"
 const ChatContext = createContext()
 
 const ChatProvider = ({ children }) => {
-  // 1. Estado de usuarios
-  // Inicializamos vacío; luego lo cargamos de localStorage o mock
   const [users, setUsers] = useState([])
-
-  // 2. Estado del usuario seleccionado
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || "light"
+  )
   const [selectedUser, setSelectedUser] = useState(null)
 
-  // 3. Al montar el Provider, revisamos si hay usuarios guardados en localStorage
-  //    - Si existen, los usamos
-  //    - Si no existen, cargamos los mock iniciales
+
   useEffect(() => {
     const storedUsers = localStorage.getItem("users")
 
@@ -61,12 +58,12 @@ const ChatProvider = ({ children }) => {
         }
       ]
       setUsers(initialUsers)
-      // Actualizamos la lista de usuarios en el localstorage
+
       localStorage.setItem("users", JSON.stringify(initialUsers))
     }
   }, [])
 
-  // 4. Cada vez que `users` cambie, sincronizamos con localStorage
+
   useEffect(() => {
     if (users.length > 0) {
       localStorage.setItem("users", JSON.stringify(users))
@@ -74,7 +71,7 @@ const ChatProvider = ({ children }) => {
   }, [users])
 
   return (
-    <ChatContext.Provider value={{ users, setUsers, selectedUser, setSelectedUser }}>
+    <ChatContext.Provider value={{ users, setUsers, selectedUser, setSelectedUser, theme, setTheme }}>
       {children}
     </ChatContext.Provider>
   )

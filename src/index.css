@@ -265,17 +265,13 @@
 
 .login-main form {
   background: white;
-  /* fondo claro del form */
   border-radius: 12px;
   padding: 30px;
   width: 320px;
-  /* ancho fijo y centrado */
   display: flex;
   flex-direction: column;
-  /* 👈 apila los elementos */
   align-items: stretch;
   gap: 15px;
-  /* espacio entre elementos */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -334,4 +330,275 @@ form .text-info {
   font-size: 13px;
   color: #000000;
   text-align: center;
+}
+
+.cont-popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.3s ease;
+}
+
+.popup {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  max-width: 380px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  animation: scaleUp 0.25s ease;
+}
+
+.popup button {
+  flex: 1;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.popup h2 {
+  font-size: 20px;
+  color: #222;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.popup label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+
+.popup input,
+.popup select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  background-color: #fafafa;
+  transition: all 0.2s ease;
+}
+
+.popup input:focus,
+.popup select:focus {
+  border-color: #00c897;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 200, 151, 0.3);
+}
+
+.popup .popup-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.popup button {
+  flex: 1;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Guardar (verde-azul) */
+.popup .save-btn {
+  background: linear-gradient(90deg, #00c897, #0078d7);
+  color: #fff;
+}
+
+.popup .save-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(0, 200, 151, 0.4);
+}
+
+.popup .close-btn {
+  background: #f3f3f3;
+  color: #333;
+}
+
+.popup .close-btn:hover {
+  background: #e4e4e4;
+}
+
+.popup::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #00c897, #0078d7);
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.chat.dark {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+
+.chat.dark .chat-header {
+  background-color: #2a2a2a;
+  border-bottom: 1px solid #444;
+}
+
+
+.chat.dark .chat-user strong {
+  color: #fff;
+}
+
+.chat.dark .last-seen {
+  color: #aaa;
+}
+
+
+.chat.dark .chat-messages {
+  background-color: #202020;
+}
+
+
+.chat.dark .chat-actions button.Logout {
+  background-color: #ffffff;
+}
+
+.chat.dark .message {
+  background-color: #2e2e2e;
+  color: #f5f5f5;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.chat.dark .chat-footer {
+  background-color: #2a2a2a;
+  border-top: 1px solid #444;
+}
+
+.chat.dark .chat-footer input {
+  background-color: #333;
+  border: 1px solid #555;
+  color: white;
+}
+
+.chat.dark .chat-footer button {
+  background: linear-gradient(90deg, #00c897, #0078d7);
+}
+
+
+.popup.dark {
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+}
+
+.popup.dark h2 {
+  color: #f1f1f1;
+
+}
+
+.popup.dark label {
+  color: #ccc;
+}
+
+.popup.dark input,
+.popup.dark select {
+  background-color: #3a3a3a;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.popup.dark input:focus,
+.popup.dark select:focus {
+  border-color: #00c897;
+  box-shadow: 0 0 6px rgba(0, 200, 151, 0.4);
+}
+
+.cont-popup.dark {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+.popup.dark .close-btn {
+  background: #444;
+  color: white;
+}
+
+.popup.dark .close-btn:hover {
+  background: #555;
+}
+
+.sidebar.dark {
+  background-color: #1f1f1f;
+  border-right: 1px solid #333;
+  color: #f1f1f1;
+}
+
+.sidebar.dark .search {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+.sidebar.dark .search::placeholder {
+  color: #aaa;
+}
+
+.sidebar.dark .user {
+  background-color: transparent;
+  border: 1px solid #2c2c2c;
+}
+
+.sidebar.dark .user:hover {
+  background-color: #2a2a2a;
+}
+
+.sidebar.dark .user-info small {
+  color: #999;
+}
+
+.sidebar.dark .avatar {
+  border-color: #00c897;
 }

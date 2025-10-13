@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react"
 import { useChat } from "../context/ChatContext"
 
+
 export default function Sidebar() {
-  const { users, setSelectedUser } = useChat()
+  const { users, setSelectedUser, theme } = useChat()
   const [usersToRender, setUsersToRender] = useState(users)
 
-  // 🔄 Cada vez que cambien los usuarios globales, actualizamos la lista a renderizar
+
+
   useEffect(() => {
     setUsersToRender(users)
   }, [users])
 
-  // 🔍 Filtro por búsqueda
+
   const handleChange = (event) => {
     const searchTerm = event.target.value.toLowerCase()
     const result = users.filter((user) =>
@@ -20,7 +22,7 @@ export default function Sidebar() {
   }
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${theme}`}>
       <input
         type="text"
         placeholder="Search..."
