@@ -7,12 +7,13 @@
 
 .app {
   display: flex;
-  height: 100vh;
+  flex-direction: row;
+  height: 100dvh;
   width: 100%;
-  overflow: hidden;
+  background-color: var(--background-color, #f1f1f1);
 }
 
-/* --- Responsive --- */
+
 @media (max-width: 768px) {
   .app {
     flex-direction: column;
@@ -27,7 +28,13 @@
   display: flex;
   flex-direction: column;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  height: 100dvh;
 }
+
+.sidebar.dark {
+  background-color: #1e1e1e;
+}
+
 
 .search {
   padding: 12px;
@@ -44,7 +51,6 @@
   color: gray;
 }
 
-/* user list */
 
 .user-list {
   list-style: none;
@@ -226,7 +232,6 @@
   box-shadow: 0 0 10px rgba(0, 120, 215, 0.3);
 }
 
-/* Login page */
 .login-main {
   height: 100vh;
   display: flex;
@@ -628,7 +633,6 @@ form .text-info {
 }
 
 
-/* === MODO CLARO === */
 .help-page.light {
   background: linear-gradient(135deg, #fefefe, #f2f2f2);
   color: #222 !important;
@@ -652,7 +656,6 @@ form .text-info {
   color: #555;
 }
 
-/* === MODO OSCURO === */
 .help-page.dark {
   background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
   color: #f5f5f5 !important;
@@ -711,22 +714,21 @@ body.light {
   background-color: #f9f9f9;
 }
 
-
-
 @media (max-width: 768px) {
   .sidebar {
     position: fixed;
-    left: 0;
     top: 0;
-    height: 100%;
-    width: 80%;
-    z-index: 20;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    left: -100%;
+    height: 100dvh;
+    width: 75%;
+    background: var(--sidebar-bg, #fff);
+    transition: left 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
   }
 
-  .sidebar.active {
-    transform: translateX(0);
+  .sidebar.open {
+    left: 0;
   }
 }
 
@@ -745,4 +747,30 @@ body.light {
     display: block;
     margin-right: 12px;
   }
+}
+
+.user-not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: var(--background-color, #ffffff);
+}
+
+.no-user-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  opacity: 0.7;
+  text-align: center;
+}
+
+
+.dark .user-not-found {
+  background-color: #1e1e1e;
+}
+
+.dark .no-user-text {
+  color: #f5f5f5;
+  opacity: 0.8;
 }

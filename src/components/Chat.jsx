@@ -2,9 +2,13 @@ import { useState, useEffect } from "react"
 import { useChat } from "../context/ChatContext"
 import { useNavigate } from "react-router-dom"
 
-export default function Chat() {
+
+export default function Chat({ setMenuOpen }) {
   const [msg, setMsg] = useState("")
   const [showPopup, setShowPopup] = useState(false)
+
+
+
 
   const [username, setUsername] = useState("Mateo Narducci")
 
@@ -27,7 +31,7 @@ export default function Chat() {
   if (!user) {
     return (
       <div className="user-not-found">
-        <p>No hay usuario seleccionado...</p>
+        <p className="no-user-text">No hay usuario seleccionado...</p>
       </div>
     )
   }
@@ -112,7 +116,9 @@ export default function Chat() {
       }
       <div className={`chat ${theme}`}>
         <header className="chat-header">
-          <button className="menu-toggle" onClick={() => document.querySelector(".sidebar").classList.toggle("active")}>
+          <button className="menu-toggle"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Abrir menú">
             ☰
           </button>
 

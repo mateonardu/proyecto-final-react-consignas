@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useChat } from "../context/ChatContext"
 
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, setMenuOpen }) {
   const { users, setSelectedUser, theme } = useChat()
   const [usersToRender, setUsersToRender] = useState(users)
 
@@ -22,7 +22,7 @@ export default function Sidebar() {
   }
 
   return (
-    <div className={`sidebar ${theme}`}>
+    <div className={`sidebar ${isOpen ? "open" : ""}`}>
       <input
         type="text"
         placeholder="Search..."
@@ -38,7 +38,10 @@ export default function Sidebar() {
         {usersToRender.map((user) => (
           <li
             key={user.id}
-            onClick={() => setSelectedUser(user.id)}
+            onClick={() => {
+              setSelectedUser(user.id);
+              if (setMenuOpen) setMenuOpen(false);
+            }}
             className="user"
           >
             <img
