@@ -128,8 +128,8 @@ export default function Chat() {
             <button title="Camera">📷</button>
             <button title="Gallery">🖼️</button>
             <button title="Settings" onClick={handleClick}>⚙️</button>
-            <button title="Help">❓</button>
-            <button tittle="Logout" onClick={handleLogout}>Cerrar sesión</button>
+            <button title="Help" onClick={() => navigate("/help")}>❓</button>
+            <button title="Logout" onClick={handleLogout}>Cerrar sesión</button>
           </div>
         </header>
 
