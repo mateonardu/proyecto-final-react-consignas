@@ -112,6 +112,10 @@ export default function Chat() {
       }
       <div className={`chat ${theme}`}>
         <header className="chat-header">
+          <button className="menu-toggle" onClick={() => document.querySelector(".sidebar").classList.toggle("active")}>
+            ☰
+          </button>
+
           <div>
             <div className="chat-user">
               <img

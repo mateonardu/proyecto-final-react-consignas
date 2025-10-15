@@ -8,10 +8,17 @@
 .app {
   display: flex;
   height: 100vh;
-  background: #f9f9f9;
-  font-family: "Poppins", sans-serif;
-  color: #222;
+  width: 100%;
+  overflow: hidden;
 }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+}
+
 
 .sidebar {
   width: 280px;
@@ -358,6 +365,14 @@ form .text-info {
   animation: scaleUp 0.25s ease;
 }
 
+@media (max-width: 480px) {
+  .popup {
+    width: 95%;
+    padding: 16px;
+    font-size: 14px;
+  }
+}
+
 .popup button {
   flex: 1;
   border: none;
@@ -694,4 +709,40 @@ body.dark {
 
 body.light {
   background-color: #f9f9f9;
+}
+
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80%;
+    z-index: 20;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: inherit;
+}
+
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-right: 12px;
+  }
 }
