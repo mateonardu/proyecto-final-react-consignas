@@ -46,7 +46,7 @@ const Login = () => {
   return (
     <main className="login-main">
       <img width={100} src={logo} alt="logo de whatsapp" />
-      <h1>Clon de Whatsapp 🎉</h1>
+      <h1>Clon de Whatsapp </h1>
       <form onSubmit={handleSubmit}>
         <label>Contraseña de acceso</label>
         <input
