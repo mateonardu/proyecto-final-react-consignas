@@ -19,9 +19,21 @@ const MessagesContent = () => {
     <div className="app">
       {isMobile ? (
         <>
-          {/* Sidebar flotante: solo visible si menuOpen === true */}
+          <button
+            className="menu-toggle-fixed"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Abrir menú lateral"
+          >
+            ☰
+          </button>
+
+          {menuOpen && (
+            <div
+              className="overlay"
+              onClick={() => setMenuOpen(false)}
+            ></div>
+          )}
           <Sidebar isOpen={menuOpen} setMenuOpen={setMenuOpen} />
-          {/* Chat siempre visible */}
           <Chat setMenuOpen={setMenuOpen} />
         </>
       ) : (
