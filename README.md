@@ -1,6 +1,6 @@
 # 💬 Clon de WhatsApp — Proyecto React JS 2025
 
-Este proyecto fue desarrollado por **Mateo Narducci** como parte de la materia **Programación React JS**, simulando el entorno visual y funcional básico de **WhatsApp Web**.  
+Este proyecto fue desarrollado por **Mateo Narducci** como parte del proeycto final para Desarrollo **Front-End**, simulando el entorno visual y funcional básico de **WhatsApp Web**.  
 Permite gestionar usuarios, enviar y visualizar mensajes, y personalizar la interfaz mediante un **modo claro/oscuro** y un **popup de configuración interactivo**.
 
 ---
